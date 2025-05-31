@@ -1,0 +1,41 @@
+
+.container{
+  width: 100%;
+}
+
+.faq-box{
+  background-color: darkgray;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+ width: 100%;
+ 
+}
+.que{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+button{
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  background-color: darkgray;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.active{
+  transform: rotate(90deg);
+}
+
+.ans{
+  color: blue;
+  padding: 0px 30px;
+}
+h1{
+  text-align: center;
+}

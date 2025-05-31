@@ -1,0 +1,95 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.App{
+  width: 80%;
+  /* height: 80vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+label{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+}
+a{
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+input{
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px 0px;
+}
+button{
+  padding: 8px 18px;
+  background-color: brown;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+  border: none;
+  border-radius: 6px;
+}
+
+.usedata{
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 20px;
+}
+.usedata h2{
+  margin: 0;
+  font-size: 30px;
+}
+span{
+  font-size: 20px;
+  line-height: 2;
+}
