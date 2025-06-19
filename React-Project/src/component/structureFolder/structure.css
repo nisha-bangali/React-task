@@ -1,0 +1,18 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    font-size: 20px;
+   
+}
+.btn{
+    font-size: 20px;
+    background-color: transparent;
+
+}
+.expand{
+    transform: rotate(90deg);
+    background-color: transparent;
+    font-size: 20px;
+}

@@ -15,16 +15,20 @@ function App() {
   }
 
   const getItem = async () => {
-    const url = `https://api.frontendeval.com/fake/food/${food}`
-    const fetchApi = await fetch(url)
-    const data = await fetchApi.json()
-    // console.log(data);
-    setShoppingList(data)
+      const url = `https://api.frontendeval.com/fake/food/${food}`
+      const fetchApi = await fetch(url)
+      const data = await fetchApi.json()
+      setShoppingList(data)
   }
   useEffect(() => {
+    let tid = setTimeout(() => {
     if (food.length >= 2) {
       getItem(food)
     }
+     }, 1000);
+     return()=>{
+      clearTimeout(tid)
+     }
   }, [food])
 
   const handleShoppingList = (e) => {

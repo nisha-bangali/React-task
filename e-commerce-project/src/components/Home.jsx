@@ -1,11 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { data, Link } from 'react-router';
+import StarRating from './Rating';
 
 const Home = () => {
+    const [product, setProduct] = useState([])
+    const [checked, setChecked] = useState(false)
+
+
+    useEffect(() => {
+  async function fetchData(){
+  const data =  await fetch('https://fakestoreapi.com/products')
+    const product = await data.json()
+    setProduct(product)
+      }
+      fetchData()
+    }, [])
+    
+     const handleWishlist = (e, key) =>{
+       setChecked(!checked)
+       
+       
+  }
+  
+
+
     return (
-        <div className="pt-20 ">
+        <div className=" ">
             {/* Hero Section */}
-            <section className="bg-gray-100 py-20 px-4 text-center">
+            <section className="bg-gray-100  px-4 text-left flex justify-center items-center">
                 <div>
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                         Welcome to MyShop
@@ -14,44 +36,53 @@ const Home = () => {
                         Discover the best deals on the latest products
                     </p>
                     <Link
-                        to="/shop"
+                        to="/products"
                         className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition"
                     >
                         Shop Now
                     </Link>
                 </div>
+                <div>
+                    <img src="https://png.pngtree.com/png-clipart/20240324/original/pngtree-shopping-website-product-png-image_14668904.png" className='w-xl'
+                    />
+                </div>
             </section>
 
             {/* Featured Products Section */}
-            <section className="max-w-7xl mx-auto px-4 py-16">
-                <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Products</h2>
+             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        {product.map((product , index) => (
+               <div className="w-2xs rounded-2xl shadow-gray-700 overflow-hidden " 
+               style={{ boxShadow: '10px 10px 12px rgba(0, 0, 0, 0.05)' }}
+               key={index}>
+                 <img className="w-full h-52 object-cover" src={product?.image} alt={product?.category} />
+                 <div className="p-5">
+                   <Link to={`/product/${product?.id}`} className="text-xl mb-2.5">
+                     {product?.title}
+                   </Link>
+                   <p className='font-bold'>{product?.brand}</p>
+                   <p className="font-bold text-blue-400 text-left">{product?.category}</p>
+                   <p className="text-lg text-gray-500 mb-2 mt-2 h-10 overflow-hidden
+                    truncate ">{product?.description}</p>
+           
+                   <div className="flex gap-2 items-center">
+                     <p className='font-bold text-lg text-gray-600'>${product?.price}</p>
+                   </div>
+                  <div className='flex justify-between items-center'>
+                     <StarRating />
+                   <i className="fa-solid fa-heart fa-xl" 
+                    onClick={handleWishlist}
+                     style={{ color: checked ? "#FF0000" :'#9ca3b0'  }}></i>
+                  </div>
+                   <div className='flex justify-center'>
+                     <button className="mt-2 pt-2 pr-4 pb-2 pl-4 bg-blue-400 text-white border-none rounded-2xl cursor-pointer">Add to Cart</button>
+                   </div>
+                 </div>
+               </div>
+                ))}
+      </section>
 
-                <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    {[1, 2, 3, 4].map((id) => (
-                        <div
-                            key={id}
-                            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition"
-                        >
-                            <img
-                                src={`https://via.placeholder.com/300x200?text=Product+${id}`}
-                                alt={`Product ${id}`}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold text-gray-800">Product {id}</h3>
-                                <p className="text-gray-600">$29.99</p>
-                                <Link
-                                    to="/shop"
-                                    className="inline-block mt-3 text-blue-600 hover:underline text-sm"
-                                >
-                                    View Details
-                                </Link>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
         </div>
+    
     );
 };
 

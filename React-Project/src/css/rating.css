@@ -1,0 +1,27 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size: 40px;
+}
+.star{
+    margin: 20px;
+    font-size: 60px;
+
+}
+button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.on{
+   color: #000;
+}
+.off{
+    color: #837c7c;
+}
