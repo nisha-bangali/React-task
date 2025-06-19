@@ -17,6 +17,7 @@
     background-color: lightgray;
     margin-left: 10px;
     border-radius: 8px;
+    font-size: 20px;
 }
 .product-list{
     display: flex;
@@ -37,6 +38,11 @@
 
 }
 .selected{
+     padding: 8px 16px;
+    margin-top: 50px;
     background-color: black;
     color: white;
+     margin-left: 10px;
+    border-radius: 8px;
+    font-size: 20px;
 }

@@ -1,0 +1,63 @@
+
+input{
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.task-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+}
+.todo{  
+   width: 23%;
+   height: 400px;
+}
+.doing{
+    width: 23%;
+    margin: 0 10px;
+    height: 400px;
+}
+.done{
+    width: 23%; 
+    height: 400px;
+}
+.todo-col{
+    background-color: lightsalmon;
+    padding: 10px 0px;
+}
+.doing-col{
+    background-color: lightblue;
+    padding: 10px 0px;
+}
+.done-col{
+    background-color: lightgreen;
+    padding: 10px 0px;
+}
+.task-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 20px;
+    height: 35px;
+    border: 1px solid lightgray;
+    margin: 10px;
+    cursor:grab;
+}
+.btn{
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+    padding: 5px;
+    cursor: pointer;
+}
+.btn:hover{
+    background: lightslategrey;
+    border-radius: 50%;
+
+}

@@ -12,6 +12,7 @@ import TreeViewFolder from './component/structureFolder/TreeViewFolder'
 import Progress from './component/ProgressBar/Progress'
 import FilterList from './component/filterData/FilterList'
 import SelectedGrid from './component/SelectedGrid'
+import DragNDrop from './component/DragNDrop'
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       <Route path="/memoryGame" element={<MemoryGame />} />
       <Route path="/tictacgame" element={<TicTacToe />} />
       <Route path="/infiniteScrolling" element={<InfiniteScrolling />} />
-      <Route path="/jobs" element={<JobBoard />} />
+      <Route path="/dragNdrop" element={<DragNDrop />} />
       <Route path="/folders" element={<TreeViewFolder />} />
       <Route path="/progressBar" element={<Progress />} />
       <Route path="/filterdata" element={<FilterList />} />

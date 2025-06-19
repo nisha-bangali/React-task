@@ -13,7 +13,7 @@ const Header = () => {
           <li><Link to="/memoryGame">Game</Link></li>
           <li><Link to="/tictacgame">Tic-Tac</Link></li>
           <li><Link to="/infiniteScrolling">Scrolling</Link></li>
-          <li><Link to="/jobs">Job-Board</Link></li>
+          <li><Link to="/dragNdrop">Drag-Drop</Link></li>
           <li><Link to="/folders">Tree-Structure-Folder</Link></li>
           <li><Link to="/progressBar">Progress-Bar</Link></li>
           <li><Link to="/filterdata">FilterList</Link></li>
