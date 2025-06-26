@@ -13,10 +13,10 @@ h1{
     font-size: 60px;
 
 }
-button{
+.star{
     border: none;
     outline: none;
-    background-color: transparent;
+    background-color: transparent !important;
     cursor: pointer;
 }
 .on{

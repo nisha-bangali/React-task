@@ -1,0 +1,8 @@
+.content{
+    font-size: 25px;
+    margin-top: 20px;
+}
+.active{
+    background-color: black  !important;
+    color: white;
+}

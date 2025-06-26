@@ -23,7 +23,7 @@
     margin-top: 50x;
 }
 .reset{
-    background-color: purple;
+    background-color: purple !important;
     font-size: 20px;
     border-radius: 5px;
     margin-top: 20px;

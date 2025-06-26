@@ -1,18 +1,59 @@
 import { Link } from 'react-router';
 import StarRating from './Rating';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function ProductCard({ Products }) {
-  const [checked, setChecked] = useState(false)
 
   const discountprice = (Products?.price * (Products?.discountPercentage) / 100);
   const finalPrice = (Products?.price - discountprice).toFixed(2);
 
-  const handleWishlist = () =>{
-    setChecked(!checked)
-  }
-  
+  const [checked, setChecked] = useState(false);
+
+  const handleWishlist = (id) => {
+    const wishlist = JSON.parse(localStorage.getItem('wishList')) || [];
+    const isAlreadyInWishlist = wishlist.find((item) => item.id === id);
+
+    if (!isAlreadyInWishlist) {
+      const updatedWishlist = [...wishlist, Products];
+      localStorage.setItem('wishList', JSON.stringify(updatedWishlist));
+      setChecked(true);
+      // setChecked(localStorage.getItem('likes'));
+    } else {
+      const updatedWishlist = wishlist.filter((item) => item.id !== id);
+      localStorage.setItem('wishList', JSON.stringify(updatedWishlist));
+      setChecked(false);
+    }
+    const likes = JSON.parse(localStorage.getItem('likes')) || {};
+    likes[id] = !isAlreadyInWishlist;
+    localStorage.setItem('likes', JSON.stringify(likes));
+  };
+
+
+  const handleAddToCard = (id) => {
+    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const isAlreadyInCart = existingCart.find(item => item.id === id);
+
+    if (!isAlreadyInCart) {
+      const updatedCart = [...existingCart, Products];
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+    toast.success('🎉 Done! This product is now waiting in your cart.', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      // transition: Bounce,
+    });
+  };
+
+
 
   return (
     <div className="w-2xs rounded-2xl shadow-gray-700 overflow-hidden "
@@ -35,12 +76,16 @@ function ProductCard({ Products }) {
         </div>
         <div className='flex justify-between items-center'>
           <StarRating />
-          <i className="fa-solid fa-heart fa-xl" 
-            onClick={handleWishlist}
-          style={{ color: checked ? "#FF0000" :'#9ca3b0'  }}></i>
+          <i className="fa-solid fa-heart fa-xl"
+            onClick={() => handleWishlist(Products?.id)}
+            style={{ color: checked ? "#FF0000" : '#9ca3b0' }}></i>
         </div>
         <div className='flex justify-center'>
-          <button className="mt-2 pt-2 pr-4 pb-2 pl-4 bg-blue-400 text-white border-none rounded-2xl cursor-pointer">Add to Cart</button>
+          <button
+            className="mt-2 pt-2 pr-4 pb-2 pl-4 bg-blue-400 text-white border-none rounded-2xl cursor-pointer"
+            onClick={() => handleAddToCard(Products?.id)}
+          >Add to Cart</button>
+          <ToastContainer />
         </div>
       </div>
     </div>

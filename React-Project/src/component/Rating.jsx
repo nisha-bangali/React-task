@@ -11,6 +11,7 @@ export default function Rating() {
        {
         [1,2,3,4,5].map((num)=>(
             <button
+               className='star'
                 key={num}
                 onClick={() => setRating(num)}
                 onMouseOver={() => setHover(num)}

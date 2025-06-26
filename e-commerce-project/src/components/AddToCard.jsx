@@ -2,42 +2,43 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import StarRating from './Rating'
 
-const WishList = () => {
-    const [wishListItem, setWishListItem] = useState([])
+const AddToCard = () => {
+    const [cardItem, setCardItem] = useState([])
 
     useEffect(() => {
-        const getItem = localStorage.getItem('wishList')
+        const getItem = localStorage.getItem('cart')
         if (getItem) {
-            setWishListItem(JSON.parse(getItem))
+            setCardItem(JSON.parse(getItem))
         }
     }, [])
     // console.log(cardItem);
-    // // for (let i = 0; i < cardItem.length; i++) {
-    // //     const discountprice = (cardItem[i]?.price * (cardItem[i]?.discountPercentage) / 100);
-    // //     console.log(discountprice);
-    // //     const finalPrice = (cardItem[i]?.price - discountprice).toFixed(2);
-    // //     // console.log(finalPrice);
+    // for (let i = 0; i < cardItem.length; i++) {
+    //     const discountprice = (cardItem[i]?.price * (cardItem[i]?.discountPercentage) / 100);
+    //     console.log(discountprice);
+    //     const finalPrice = (cardItem[i]?.price - discountprice).toFixed(2);
+    //     // console.log(finalPrice);
 
-    // // }
-    // // console.log(finalPrice);
+    // }
+    // console.log(finalPrice);
     const handleRemove = (itemToRemove) => {
-        const updatedCart = wishListItem.filter(item => item.id !== itemToRemove.id);
-        setWishListItem(updatedCart);
-        localStorage.setItem('wishList', JSON.stringify(updatedCart));
+        const updatedCart = cardItem.filter(item => item.id !== itemToRemove.id);
+        setCardItem(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
     };
-    
+    //     setCardItem(copyCardItem)
+    // //   const removeItem =  localStorage.removeItem(e.target.id)
+
+
 
 return (
     <div>
         {
-            // <h1>wish list</h1>
-            !wishListItem.length ? (
-                <p className='text-center text-2xl m-15'>No items in WishList...</p>
+            !cardItem.length ? (
+                <p className='text-center text-2xl m-15'>No items in Card...</p>
             ) : (
-                // <h1>one item exist</h1>
-                <div className='flex m-10 p-10'>
+                <div className='flex m-10 p-10 flex-wrap '>
                     {
-                        wishListItem.map((item) => (
+                        cardItem.map((item) => (
                             <div className="w-2xs rounded-2xl shadow-gray-700 overflow-hidden "
                                 style={{ boxShadow: '10px 10px 12px rgba(0, 0, 0, 0.05)' }}
                                 key={item?.id}>
@@ -60,8 +61,7 @@ return (
                                         <StarRating />
                                         <i className="fa-solid fa-heart fa-xl"
                                         // onClick={handleWishlist}
-                                         onClick={() => handleRemove(item)}
-                                        style={{ color: 'red' }}
+                                        // style={{ color: checked ? "#FF0000" : '#9ca3b0' }}
                                         >
 
                                         </i>
@@ -69,7 +69,7 @@ return (
                                     <div className='flex justify-center'>
                                         <button
                                             className="mt-2 pt-2 pr-4 pb-2 pl-4 bg-blue-400 text-white border-none rounded-2xl cursor-pointer"
-                                           
+                                            onClick={() => handleRemove(item)}
                                         >Remove to Cart</button>
                                     </div>
                                 </div>
@@ -83,4 +83,4 @@ return (
 )
 }
 
-export default WishList
+export default AddToCard

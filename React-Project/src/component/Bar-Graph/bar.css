@@ -1,0 +1,50 @@
+
+.bar-graph-App{
+    width: 100%;
+    height: 80vh;
+}
+.bar-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bar-box{
+    display: flex;
+    border-left: 2px solid black ;
+    border-bottom: 2px solid black;
+    width: 50%;
+    height: 70%;
+    position: relative;
+}
+.y-axix-box{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -5%;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.x-axis-box{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    display: flex;
+}
+.graph{
+    width: 20px;
+    background-color: lightseagreen;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.index{
+    position: absolute;
+    bottom: -7%;
+    left: 45%;
+}

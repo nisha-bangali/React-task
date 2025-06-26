@@ -8,11 +8,13 @@
 }
 .btn{
     font-size: 20px;
-    background-color: transparent;
+    background-color: transparent !important;
+    border: none;
 
 }
 .expand{
     transform: rotate(90deg);
-    background-color: transparent;
+    background-color: transparent !important;
+    border: none;
     font-size: 20px;
 }

@@ -14,7 +14,7 @@ function Productdetail() {
         setProductDetail(product)
     }).catch((err) => console.log(err))
    },[id])
-   console.log(productDetail,"product.....");
+//    console.log(productDetail,"product.....");
    
 
    const discountprice = (productDetail?.price * (productDetail?.discountPercentage) / 100)   

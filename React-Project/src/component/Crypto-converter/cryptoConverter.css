@@ -1,0 +1,23 @@
+
+select{
+    width: 80px;
+    height: 45px;
+    margin: 0 10px;
+    font-size: 20px;
+    /* padding: 10px; */
+}
+
+.curr-info{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    align-items: center;
+    margin: 20px auto;
+    font-size: 30px;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}

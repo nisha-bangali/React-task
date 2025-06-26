@@ -52,7 +52,7 @@ text-align: center;
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .nav-links li a {
@@ -99,7 +99,7 @@ body{
 .timer-button{
   margin: 20px;
   padding: 12px 20px;
- background-color: green;
+ background-color: green !important;
  color: white;
  border: none;
  border-radius: 8px;
@@ -121,7 +121,7 @@ body{
   margin: 20px;
 }
 .action-buttons button{
-  background-color: rgb(226, 72, 72);
+  background-color: rgb(226, 72, 72) !important;
   color: white;
   font-size: 16px;
   border: none;
