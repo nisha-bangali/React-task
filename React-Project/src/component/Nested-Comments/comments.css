@@ -1,0 +1,33 @@
+
+.comment-App{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: absolute;
+
+}
+.comment-button{
+    display: flex;
+    justify-content: left;
+    font-size: 18px;
+    border: none;
+    background-color: blueviolet !important;
+    color: white;
+}
+.comment-line{
+    text-align: left;
+    font-size: 20px;
+}
+.comment-btn{
+    font-size: 16px;
+    background-color: black !important;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+.input-reply{
+    width: 200px;
+    height: 10px;
+    
+}

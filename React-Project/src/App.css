@@ -44,15 +44,18 @@ text-align: center;
   padding: 10px;
   color: white;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   width: 100%;
 }
-
+/* .navbar{
+  display: flex;
+  flex-direction: row;
+} */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .nav-links li a {

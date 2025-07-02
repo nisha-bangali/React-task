@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <h2>My Projects</h2>
-      <nav>
+      <nav className='navbar'>
         <ul className="nav-links">
           <li><Link to="/">CountDown-Timer</Link></li>
           <li><Link to="/rating">Rating</Link></li>
@@ -24,6 +24,8 @@ const Header = () => {
           <li><Link to="/form">Handle-Form</Link></li>
           <li><Link to="/tab">Costom-Tab</Link></li>
           <li><Link to="/graph">Bar-Graph</Link></li>
+          <li><Link to="/comments">Comments</Link></li>
+
         </ul>
       </nav>
     </header>

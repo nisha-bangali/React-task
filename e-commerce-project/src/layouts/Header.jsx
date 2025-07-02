@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink  } from 'react-router';
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../components/ThemeContext';
 
 const Navbar = () => {
 
@@ -24,7 +24,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            <NavLink  to="/" className="text-2xl font-bold text-gray-800">MyShop</NavLink >
+            <NavLink  to="/" className="text-4xl font-bold text-blue-600 hover:text-blue-700">MyShop</NavLink >
           </div>
 
           {/* Desktop Links */}
@@ -84,3 +84,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

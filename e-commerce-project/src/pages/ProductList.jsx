@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import ProductCard from './Shop'
-import ProductSimmerEffect from './ProductSimmerEffect'
+import ProductCard from '../components/Shop'
+import ProductSimmerEffect from '../components/ProductSimmerEffect'
 
 function ProductList() {
   const [data, setData] = useState([]) // original data
@@ -28,7 +28,7 @@ function ProductList() {
       setActiveFilter(activeFilter.filter((el) => el !== category))
     } else {
       setActiveFilter([...activeFilter, category])
-    }
+    } 
   }
 
   // Update filteredData when activeFilter changes

@@ -18,6 +18,7 @@ import HandleForm from './component/Handle-Form/HandleForm'
 import CostomTab from './component/Costom-Tab/CostomTab'
 import BarGraph from './component/Bar-Graph/BarGraph'
 import JobBoard from './component/JobBoard'
+import NestesComment from './component/Nested-Comments/nestesComment'
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
       <Route path="/form" element={<HandleForm />} />
       <Route path="/tab" element={<CostomTab />} />
       <Route path="/graph" element={<BarGraph />} />
+      <Route path="/comments" element={<NestesComment />} />
     </Routes>
     
     </BrowserRouter>
